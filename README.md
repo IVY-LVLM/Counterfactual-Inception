@@ -78,7 +78,7 @@ The project structure primarily includes four directories: benchmarks, file_util
 │   ├── counterfactual_inception
 │   └── counterfactual_keywords_generation
 ├── default_settings.yaml                         # Default settings before run
-├── evaluate.py                                   # Evaluation on Benchmarks
+├── evaluate.py                                   # Evaluate models on Benchmarks
 ├── generate_counterfactual_keywords_gpt4v.py     # Generate counterfactual keywords
 ├── LICENSE
 ├── requirements.txt
