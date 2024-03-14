@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd":"${workspaceFolder}",
+            "env": {
+                "HF_HOME" : "/mnt/ssd/lmm/huggingface",
+                "CUDA_VISIBLE_DEVICES" : "0,1",
+                "TOKENIZERS_PARALLELISM" : "false"
+            },
+            // "args": ["--models", "gemini", "--datasets", "pope", "--counterfactual"] 
+            // "args": ["--models", "llava-model-hf", "--datasets", "llavabench"] //, "--top_k", "2"]  
+            "args": ["--models", "gpt4v", "--datasets", "mmhalbench", "--counterfactual"] 
+            // "args": ["--models", "gemini", "--datasets", "llavabench", "--counterfactual", "--contradiction_threshold", "0.0", "--clip_lower_threshold", "0.0", "--clip_upper_threshold", "1.0"]
+            // "args": ["--datasets", "mme"] 
+            // "args": ["--datasets", "mmhalbench"] 
+            // "args": ["--datasets", "mmvp"] 
+            // "args": ["--datasets", "pope"] 
+            // "args": ["--models", "gemini", "--datasets", "pope", "--counterfactual"] 
+            // "args": ["--models", "gpt4v", "--datasets", "pope", "--counterfactual"] 
+            // "args": ["--models", "llava-model-hf", "--datasets", "pope", "--counterfactual"] 
+            // "args": ["--models", "qwen-vl", "--datasets", "pope", "--counterfactual"] 
+            // "args": ["--models", "gpt4v", "--datasets", "pope"] // , "--counterfactual"] 
+        }
+    ]
+}

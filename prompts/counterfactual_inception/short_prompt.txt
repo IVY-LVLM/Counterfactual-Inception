@@ -1,0 +1,3 @@
+Please use counterfactual keywords that are different from the facts as a guide to understand the image well. Then, answer the questions.
+Counterfactual keywords: {counterfactual_keyword}.
+Question: {text_prompt}
