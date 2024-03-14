@@ -5,15 +5,15 @@ Official implementation of 'What if...?: Counterfactual Inception to Mitigate Ha
 
 ## table of contents
 
-- [:pencil2: Summary](#pencil2-summary)
-- [:eyes: Environment Setup](#eyes-environment-setup)
-- [:clap: Default Setting](#clap-Default-Setting)
-- [:house: Project Structure](#house-Project-Structure)
-- [:white_check_mark: Benchmark Folder Structure](#white_check_mark-Benchmark-Folder-Structure)
-- [:key: Generate Counterfactual Keywords with GPT-4V](#key-Generate-Counterfactual-Keywords-with-GPT-4V)
-- [:hammer: Evaluate Models on Benchmarks](#hammer-Evaluate-Models-on-Benchmarks)
-- [:heavy_plus_sign: Add new prompts](#heavy_plus_sign-Add-new-prompts)
-- [:arrow_down: Download Datasets](#arrow_down-Download-Datasets)
+- [Summary](#pencil2-summary)
+- [Environment Setup](#eyes-environment-setup)
+- [Default Setting](#clap-Default-Setting)
+- [Project Structure](#house-Project-Structure)
+- [Benchmark Folder Structure](#white_check_mark-Benchmark-Folder-Structure)
+- [Generate Counterfactual Keywords with GPT-4V](#key-Generate-Counterfactual-Keywords-with-GPT-4V)
+- [Evaluate Models on Benchmarks](#hammer-Evaluate-Models-on-Benchmarks)
+- [Add new prompts](#heavy_plus_sign-Add-new-prompts)
+- [Download Datasets](#arrow_down-Download-Datasets)
 
 ## :pencil2: Summary
 This paper presents a way of enhancing the reliability of Large Multimodal Models (LMMs) in addressing hallucination effects, where models generate incorrect or unrelated responses. Without additional instruction tuning paradigm, we introduce Counterfactual Inception, a novel method that implants counterfactual thoughts into LMMs using carefully chosen, misaligned counterfactual keywords. This method is grounded in the concept of counterfactual thinking, a cognitive process where humans consider alternative realities and outcomes. By applying this human-like reasoning mechanism to LMMs, we aim to reduce hallucination effects and improve the models' trustworthiness. We also propose Dual-modality Verification Process (DVP), a rigorous framework for selecting optimal counterfactual keywords to trigger counterfactual thinking into LMMs, concurrently considering visual and linguistic context. Our extensive experiments across various LMMs, including both open-source and proprietary models, corroborate that our method significantly mitigates hallucination phenomena across different datasets. 
