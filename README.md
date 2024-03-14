@@ -1,6 +1,7 @@
-# What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models
+# What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal
 
-<!-- Official implementation of ['What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'](https://arxiv.org/pdf/.pdf) -->
+Official implementation of 'What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'.
+![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
 ## Summary
 This paper presents a way of enhancing the reliability of Large Multimodal Models (LMMs) in addressing hallucination effects, where models generate incorrect or unrelated responses. Without additional instruction tuning paradigm, we introduce Counterfactual Inception, a novel method that implants counterfactual thoughts into LMMs using carefully chosen, misaligned counterfactual keywords. This method is grounded in the concept of counterfactual thinking, a cognitive process where humans consider alternative realities and outcomes. By applying this human-like reasoning mechanism to LMMs, we aim to reduce hallucination effects and improve the models' trustworthiness. We also propose Dual-modality Verification Process (DVP), a rigorous framework for selecting optimal counterfactual keywords to trigger counterfactual thinking into LMMs, concurrently considering visual and linguistic context. Our extensive experiments across various LMMs, including both open-source and proprietary models, corroborate that our method significantly mitigates hallucination phenomena across different datasets. 
@@ -64,8 +65,8 @@ The project structure primarily includes four directories: benchmarks, file_util
 ├── prompts
 │   ├── counterfactual_inception
 │   └── counterfactual_keywords_generation
-├── default_settings.yaml    # Default settings before run
-├── evaluate.py              # Evaluation on Benchmarks
+├── default_settings.yaml                         # Default settings before run
+├── evaluate.py                                   # Evaluation on Benchmarks
 ├── generate_counterfactual_keywords_gpt4v.py     # Generate counterfactual keywords
 ├── LICENSE
 ├── requirements.txt
