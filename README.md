@@ -3,10 +3,10 @@
 Official implementation of 'What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'.
 ![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
-## Summary
+## :pencil2: Summary
 This paper presents a way of enhancing the reliability of Large Multimodal Models (LMMs) in addressing hallucination effects, where models generate incorrect or unrelated responses. Without additional instruction tuning paradigm, we introduce Counterfactual Inception, a novel method that implants counterfactual thoughts into LMMs using carefully chosen, misaligned counterfactual keywords. This method is grounded in the concept of counterfactual thinking, a cognitive process where humans consider alternative realities and outcomes. By applying this human-like reasoning mechanism to LMMs, we aim to reduce hallucination effects and improve the models' trustworthiness. We also propose Dual-modality Verification Process (DVP), a rigorous framework for selecting optimal counterfactual keywords to trigger counterfactual thinking into LMMs, concurrently considering visual and linguistic context. Our extensive experiments across various LMMs, including both open-source and proprietary models, corroborate that our method significantly mitigates hallucination phenomena across different datasets. 
 
-## Environment Setup
+## :eyes: Environment Setup
 
 ```bash
 conda create -n CFI -y python=3.9
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## Default Setting
+## :clap: Default Setting
 
 Before executing the code, you must complete the YAML file below by specifying the folder paths and API keys.
 
@@ -34,7 +34,7 @@ settings:
   gemini_api_key: <GEMINI API KEY>
 ```
 
-## Project Structure
+## :house: Project Structure
 Here is the project structure.
 
 The project structure primarily includes four directories: benchmarks, file_utils, models, and tools. The file evaluate.py is used to perform evaluations on benchmarks, while generate_counterfactual_keywords_gpt4v.py is designated for generating counterfactual keywords using gpt4v.
@@ -73,7 +73,7 @@ The project structure primarily includes four directories: benchmarks, file_util
 └── README.md
 ```
 
-## Benchmark Folder Structure
+## :white_check_mark: Benchmark Folder Structure
 
 To generate and evaluate counterfactual keywords, you must first prepare the benchmark dataset. According to the folder structure provided, ensure to place the image files in the designated directories.
 
@@ -102,7 +102,7 @@ To generate and evaluate counterfactual keywords, you must first prepare the ben
     └── ...
 ```
 
-## Generate Counterfactual Keywords with GPT-4V
+## :key: Generate Counterfactual Keywords with GPT-4V
 
 1. Run the generation code
 ```bash
@@ -134,7 +134,7 @@ Here's the list of counterfactual files for the given model and benchmark:
 Enter the number of your selection(1-3): 1
 ```
 
-## Evaluate Models on Benchmarks
+## :hammer: Evaluate Models on Benchmarks
 
 1. Run the evaluation code
 ```bash
@@ -183,7 +183,7 @@ Here's the list of counterfactual prompt files:
 Enter the number of your selection(1-2): 1
 ```
 
-## Add new prompts
+## :heavy_plus_sign: Add new prompts
 
 You can add prompts for Counterfactual Inception and Counterfactual keyword generation.
 
@@ -198,7 +198,7 @@ Question: {text_prompt}
 
 For Counterfactual keyword generation, you can add new prompt in txt file at 'prompts/counterfactual_keywords_generation'.
 
-## Download Datasets
+## :arrow_down: Download Datasets
 
 - [POPE](https://github.com/RUCAIBox/POPE)
 - [MMVP](https://huggingface.co/datasets/MMVP/MMVP)
