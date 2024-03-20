@@ -3,7 +3,7 @@
 Official implementation of 'What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'.
 ![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
-## table of contents
+## :page_facing_up: Table of contents
 
 - [Summary](#pencil2-summary)
 - [Environment Setup](#eyes-environment-setup)
