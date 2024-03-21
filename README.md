@@ -1,6 +1,6 @@
 # What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal
 
-Official implementation of 'What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'.
+Official implementation of ['What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'](https://arxiv.org/abs/2403.13513).
 ![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
 ## :page_facing_up: Table of contents
