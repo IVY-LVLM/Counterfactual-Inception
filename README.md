@@ -1,220 +1,48 @@
-# What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal
+# Academic Project Page Template
+This is an academic paper project page template.
 
-Official implementation of ['What if...?: Counterfactual Inception to Mitigate Hallucination Effects in Large Multimodal Models'](https://arxiv.org/abs/2403.13513).
-![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
-## :page_facing_up: Table of contents
+Example project pages built using this template are:
+- https://vision.huji.ac.il/spectral_detuning/
+- https://vision.huji.ac.il/podd/
+- https://dreamix-video-editing.github.io
+- https://vision.huji.ac.il/conffusion/
+- https://vision.huji.ac.il/3d_ads/
+- https://vision.huji.ac.il/ssrl_ad/
+- https://vision.huji.ac.il/deepsim/
 
-- [Summary](#pencil2-summary)
-- [Environment Setup](#eyes-environment-setup)
-- [Default Setting](#clap-Default-Setting)
-- [Project Structure](#house-Project-Structure)
-- [Benchmark Folder Structure](#white_check_mark-Benchmark-Folder-Structure)
-- [Generate Counterfactual Keywords with GPT-4V](#key-Generate-Counterfactual-Keywords-with-GPT-4V)
-- [Evaluate Models on Benchmarks](#hammer-Evaluate-Models-on-Benchmarks)
-- [Add new prompts](#heavy_plus_sign-Add-new-prompts)
-- [Download Datasets](#arrow_down-Download-Datasets)
 
-## :pencil2: Summary
-This paper presents a way of enhancing the reliability of Large Multimodal Models (LMMs) in addressing hallucination effects, where models generate incorrect or unrelated responses. Without additional instruction tuning paradigm, we introduce Counterfactual Inception, a novel method that implants counterfactual thoughts into LMMs using carefully chosen, misaligned counterfactual keywords. This method is grounded in the concept of counterfactual thinking, a cognitive process where humans consider alternative realities and outcomes. By applying this human-like reasoning mechanism to LMMs, we aim to reduce hallucination effects and improve the models' trustworthiness. We also propose Dual-modality Verification Process (DVP), a rigorous framework for selecting optimal counterfactual keywords to trigger counterfactual thinking into LMMs, concurrently considering visual and linguistic context. Our extensive experiments across various LMMs, including both open-source and proprietary models, corroborate that our method significantly mitigates hallucination phenomena across different datasets. 
 
-## :eyes: Environment Setup
+## Start using the template
+To start using the template click on `Use this Template`.
 
-```bash
-conda create -n CFI -y python=3.9
-conda activate CFI
+The template uses html for controlling the content and css for controlling the style. 
+To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
 
-# install pytorch
-pip3 install torch torchvision torchaudio
+**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
 
-# install dependencies
-pip install -r requirements.txt
-pip install -e .
-```
+## Components
+- Teaser video
+- Images Carousel
+- Youtube embedding
+- Video Carousel
+- PDF Poster
+- Bibtex citation
 
-## :clap: Default Setting
+## Tips:
+- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
+- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
+(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
+- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
+- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
+- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
+- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
+- This project page can also be made into a github pages website.
+- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
+- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://pages.cs.huji.ac.il/eliahu-horwitz/](https://pages.cs.huji.ac.il/eliahu-horwitz/)
 
-Before executing the code, you must complete the YAML file below by specifying the folder paths and API keys.
+## Acknowledgments
+Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-``` yaml
-# default_settings.yaml
-settings:
-  log_folder: <LOG FOLDER>
-  counterfactual_folder: <COUNTERFACTUAL FOLDER>
-  data_folder: <DATA PARENT FOLDER>
-  openai_api_key: <OPENAI API KEY>
-  gemini_api_key: <GEMINI API KEY>
-```
-
-## :house: Project Structure
-Here is the project structure.
-
-The project structure primarily includes four directories: benchmarks, file_utils, models, and tools. The file evaluate.py is used to perform evaluations on benchmarks, while generate_counterfactual_keywords_gpt4v.py is designated for generating counterfactual keywords using gpt4v.
-
-```
-.
-├── benchmarks                # 5 Evaluation Benchmarks
-│   ├── llavabench.py
-│   ├── llava-qa90.py
-│   ├── mmhalbench.py
-│   ├── mmvp.py
-│   └── pope.py
-├── file_utils
-│   ├── counterfactual_file_manage.py
-│   ├── counterfactual_utilization_prompt_manage.py
-│   └── result_file_manage.py
-├── models                    # 6 Models
-│   ├── cog-vlm.py
-│   ├── gemini.py
-│   ├── gpt4v.py
-│   ├── llava-model-hf.py
-│   ├── qwen-vl.py
-│   └── yi-vl.py
-├── tools
-│   ├── clip_similarity.py
-│   ├── nli_score.py
-│   └── read_yaml.py
-├── prompts
-│   ├── counterfactual_inception
-│   └── counterfactual_keywords_generation
-├── default_settings.yaml                         # Default settings before run
-├── evaluate.py                                   # Evaluate models on Benchmarks
-├── generate_counterfactual_keywords_gpt4v.py     # Generate counterfactual keywords
-├── LICENSE
-├── requirements.txt
-└── README.md
-```
-
-## :white_check_mark: Benchmark Folder Structure
-
-To generate and evaluate counterfactual keywords, you must first prepare the benchmark dataset. According to the folder structure provided, ensure to place the image files in the designated directories.
-
-```
-.
-├── llavabench
-│   ├── 001.jpg
-│   ├── 002.jpg
-│   └── ...
-├── llava-qa90
-│   ├── 000000020650.jpg
-│   ├── 000000034096.jpg
-│   └── ...
-├── mmhalbench
-│   ├── 10172500456_1f40b6bd38_o.jpg
-│   ├── 11715451803_24861529ab_o.jpg
-│   └── ...
-├── mmvp
-│   └── MMVP Images
-│       ├── 1.jpg
-│       ├── 2.jpg
-│       └── ...
-└── pope
-    ├── COCO_val2014_000000001171.jpg
-    ├── COCO_val2014_000000003845.jpg
-    └── ...
-```
-
-## :key: Generate Counterfactual Keywords with GPT-4V
-
-1. Run the generation code
-```bash
-# activate the environment
-conda activate CFI
-
-# generate the counterfactual keywords of <benchmark_name> with <model_name>
-python generate_counterfactual_keywords_gpt4v.py --models <model_name> --datasets <benchmark_name>
-```
-2. Select Counterfactual prompt file
-``` 
-<<<<<=====Counterfactual Prompt File=====>>>>>
-1: short_version.txt
-2: detailed_version.txt
-Please select the counterfactual prompt file: 1
-```
-
-3. Select Counterfactual file 
-
-If you choose an existing file, you can proceed with the continuous generation of counterfactual keywords.
-
-```
-<<<<<=====CounterFactual file=====>>>>>
-Here's the list of counterfactual files for the given model and benchmark: 
-1. mmhalbench_openai-gpt4_counterfactuals_0221_v1.jsonl
-2. Create a new counterfactual file
-3. Get counterfactual file of other model
-===========================================================================
-Enter the number of your selection(1-3): 1
-```
-
-## :hammer: Evaluate Models on Benchmarks
-
-1. Run the evaluation code
-```bash
-# activate the environment
-conda activate CFI
-
-# evaluate <model_name> on <benchmark_name>
-python evaluate.py --models <model_name> --datasets <benchmark_name>
-
-# evaluate <model_name> on <benchmark_name> with counterfactual inception
-python evaluate.py --models <model_name> --datasets <benchmark_name> --counterfactual
-```
-
-2. Select Counterfactual keyword file
-
-The list currently displays only the counterfactual keywords generated by the model being evaluated. 
-
-To select counterfactual keywords created by a different model, choose option '2. Get counterfactual file of other model'.
-```
-<<<<<=====CounterFactual file=====>>>>>
-Here's the list of counterfactual files for the given model and benchmark: 
-1. mmhalbench_gpt4v_counterfactuals_0221_v1.jsonl
-2. Get counterfactual file of other model
-===========================================================================
-Enter the number of your selection(1-2): 1
-```
-
-3. Select Result file to record the evaluation results
-
-If you choose existing file, you can record continuously from the last record of the file.
-```
-<<<<<=====Result file=====>>>>>
-Here's the list of result files for the given model and benchmark: 
-1. New result file
-2. mmhalbench_gpt4v_results_0314_v1_cf.jsonl
-3. mmhalbench_gpt4v_results_0314_v2_cf.jsonl
-Enter the number of your selection(1-3): 1
-```
-
-4. Select Counterfactual prompt file
-```
-<<<<<=====Counterfactual Prompt File=====>>>>>
-Here's the list of counterfactual prompt files: 
-1. long_prompt.txt
-2. short_prompt.txt
-Enter the number of your selection(1-2): 1
-```
-
-## :heavy_plus_sign: Add new prompts
-
-You can add prompts for Counterfactual Inception and Counterfactual keyword generation.
-
-For Counterfactual Inception, you can add a new prompt to the txt file located in 'prompts/counterfactual_inception'. Like the below example, you need to include placeholders for the counterfactual keywords and task prompt, denoted as {counterfactual_keyword} and {text_prompt}, respectively.
-
-``` bash
-# prompts/counterfactual_inception/short_prompt.txt
-Please use counterfactual keywords that are different from the facts as a guide to understand the image well. Then, answer the questions.
-Counterfactual keywords: {counterfactual_keyword}.
-Question: {text_prompt}
-```
-
-For Counterfactual keyword generation, you can add new prompt in txt file at 'prompts/counterfactual_keywords_generation'.
-
-## :arrow_down: Download Datasets
-
-- [POPE](https://github.com/RUCAIBox/POPE)
-- [MMVP](https://huggingface.co/datasets/MMVP/MMVP)
-- [LLaVA-Bench(In-the-Wild)](https://huggingface.co/datasets/liuhaotian/llava-bench-in-the-wild)
-- [MMHalBench](https://huggingface.co/datasets/Shengcao1006/MMHal-Bench)
-- [LLaVA-QA90](https://github.com/llava-rlhf/LLaVA-RLHF/tree/main/Eval/llava)
-
+## Website License
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

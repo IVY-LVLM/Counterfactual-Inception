@@ -1,6 +1,0 @@
-settings:
-  log_folder: <LOG FOLDER>
-  counterfactual_folder: <COUNTERFACTUAL FOLDER>
-  data_folder: <DATA PARENT FOLDER>
-  openai_api_key: <OPENAI API KEY>
-  gemini_api_key: <GEMINI API KEY>

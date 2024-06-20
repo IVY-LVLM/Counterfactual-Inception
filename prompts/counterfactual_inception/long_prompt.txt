@@ -1,9 +1,0 @@
-###Instruction###
-Think step by step about the given image within the context of Counterfactual Keywords. Counterfactual Keywords are carefully selected to obfuscate understanding of the image.
-Your response MUST provide a detailed answer to the given question, disregarding the Counterfactual Keywords.
-
-###Input###
-Counterfactual Keywords: {counterfactual_keyword}.
-Question: {text_prompt}
-
-###Output###
