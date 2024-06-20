@@ -190,7 +190,7 @@
         <div class="hero-body">
           <img src="static/images/cf_analysis.png" alt="Comparison"/>
           <h2 class="content has-text-justified">
-            Distribution of the self-generated counterfactual keywords. We observe that GPT-4V likes ice cream.
+            Frequency distribution for the counterfactual keywords. We have empirically observed that the keywords in the upper half of the distribution are closer to factual information rather than counterfactual, thus the lower half, excluding extreme low, is set as the criteria.
           </h2>
         </div>
       </div>
@@ -207,7 +207,7 @@
         <div class="hero-body">
           <img src="static/images/cf_dist.png" alt="Comparison"/>
           <h2 class="content has-text-justified">
-            Distribution of the self-generated counterfactual keywords. We observe that GPT-4V likes ice cream.
+            Top-5 words occurrence using morphological analysis (NLTK) in counterfactual keywords & cumulative distribution of the self-generated counterfactual keywords. One interesting finding is that GPT-4V likes ice cream (biased result). Such bias may the frequently occurred words in its training data, reflecting a specific weakness of the model's ability to generate diverse alternatives. Also this indicates the potential availability of counterfactual keywords as revealing generative vulnerabilities in the alternative responses.
           </h2>
         </div>
       </div>
