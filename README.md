@@ -4,7 +4,7 @@ Official implementation of ['What if...?: Thinking Counterfactual Keywords Helps
 ![fig1](https://github.com/IVY-LVLM/Counterfactual-Inception/assets/95571735/69dfdc9f-f2d8-44dd-b950-a9b3476a5c0b)
 
 ## :pushpin: Updates and In-progress
-- [x] New version (v2) is released!.
+- [x] [2024-06-21] New version (v2) is released!.
 - [ ] Uploading code.
 
 
